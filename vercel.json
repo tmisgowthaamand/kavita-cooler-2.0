@@ -8,16 +8,10 @@
     }
   ],
   "routes": [
-    {
-      "src": "/_next/static/(.*)",
-      "dest": "/_next/static/$1"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
