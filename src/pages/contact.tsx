@@ -200,8 +200,8 @@ const ContactPage = () => {
               </div>
               <h3 className="text-xl font-semibold mb-2">Email Us</h3>
               <p className="text-gray-600 mb-4">We'll get back to you soon</p>
-              <a href="mailto:support@kavitacooler.com" className="text-primary font-medium inline-flex items-center">
-                support@kavitacooler.com <ArrowRight className="ml-2 h-4 w-4" />
+              <a href="mailto:contact@kavithacoolers.shop" className="text-primary font-medium inline-flex items-center">
+                contact@kavithacoolers.shop <ArrowRight className="ml-2 h-4 w-4" />
               </a>
               <p className="text-sm text-gray-500 mt-2">Replies within 24 hours</p>
             </motion.div>

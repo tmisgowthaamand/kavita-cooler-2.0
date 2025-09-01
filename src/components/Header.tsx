@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Search, Menu, X, Phone, MapPin, Clock, Home } from 'lucide-react';
+import { Search, Menu, Phone, MapPin, Clock, Home } from 'lucide-react';
 import { CartDropdown } from '@/features/cart/components/CartDropdown';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -50,9 +50,11 @@ const Header = () => {
             
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">K</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Kavita Cooler Logo" 
+                className="h-12 w-auto object-contain"
+              />
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold text-secondary">Kavita Cooler</h1>
                 <p className="text-xs text-muted-foreground">Authorized Dealers & Service</p>

@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { Button } from "../components/ui/button";
-import { cn } from "../lib/utils";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { 
-  Wrench, 
   ShieldCheck, 
   Clock, 
   Truck, 
   Settings, 
-  Zap, 
   Phone, 
   Star, 
   Mail, 
@@ -21,19 +18,16 @@ import {
   Tv as TvIcon,
   Snowflake,
   Refrigerator as Fridge,
-  Wind,
   Droplets,
   Fan as FanIcon,
   Microwave as MicrowaveIcon
 } from "lucide-react";
-import { Link } from 'react-router-dom';
 
 // Icon Components
 const Tv = (props: any) => <TvIcon className="h-6 w-6 text-blue-500" {...props} />;
 const AirConditioner = (props: any) => <Snowflake className="h-6 w-6 text-blue-400" {...props} />;
 const Refrigerator = (props: any) => <Fridge className="h-6 w-6 text-blue-300" {...props} />;
 const WashingMachine = (props: any) => <Settings className="h-6 w-6 text-blue-400" {...props} />;
-const AirCooler = (props: any) => <Wind className="h-6 w-6 text-blue-300" {...props} />;
 const WaterHeater = (props: any) => <Droplets className="h-6 w-6 text-orange-400" {...props} />;
 const Fan = (props: any) => <FanIcon className="h-6 w-6 text-gray-600" {...props} />;
 const Microwave = (props: any) => <MicrowaveIcon className="h-6 w-6 text-red-400" {...props} />;
@@ -732,7 +726,7 @@ function ServicesPage() {
                   </div>
                   <h3 className="mt-4 font-poppins font-semibold text-white">Email Us</h3>
                   <p className="mt-2 font-dm-sans text-blue-100">
-                    <a href="mailto:service@kavitacooler.com" className="hover:underline">service@kavitacooler.com</a>
+                    <a href="mailto:contact@kavithacoolers.shop" className="hover:underline">contact@kavithacoolers.shop</a>
                   </p>
                   <p className="font-dm-sans text-sm text-blue-100">Response within 2 hours</p>
                 </motion.div>

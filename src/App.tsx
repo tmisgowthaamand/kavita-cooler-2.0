@@ -18,6 +18,10 @@ import Checkout from "./pages/checkout";
 import { OrderConfirmation } from "./pages/OrderConfirmation";
 import NotFound from "./pages/NotFound";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import Privacy from "./pages/privacy";
+import Terms from "./pages/terms";
+import Shipping from "./pages/shipping";
+import CancellationRefund from "./pages/cancellation-refund";
 
 // Configure query client with proper defaults
 const queryClient = new QueryClient({
@@ -64,6 +68,10 @@ const AppRoutes = () => (
       } 
     />
     <Route path="/order-confirmation" element={<OrderConfirmation />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/terms" element={<Terms />} />
+    <Route path="/shipping" element={<Shipping />} />
+    <Route path="/cancellation-refund" element={<CancellationRefund />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );

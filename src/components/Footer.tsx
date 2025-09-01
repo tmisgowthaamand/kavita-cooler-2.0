@@ -152,8 +152,8 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-2">
                 <MessageCircle className="w-4 h-4 mt-0.5 text-[#FF7A00] flex-shrink-0" />
-                <a href="mailto:info@kavitacooler.com" className="text-sm hover:text-[#FF7A00] transition-colors duration-200">
-                  info@kavitacooler.com
+                <a href="mailto:contact@kavithacoolers.shop" className="text-sm hover:text-[#FF7A00] transition-colors duration-200">
+                  contact@kavithacoolers.shop
                 </a>
               </div>
               <div className="flex items-start space-x-2">
@@ -222,10 +222,10 @@ const Footer = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              { text: 'Privacy Policy', path: '/policies/privacy' },
-              { text: 'Terms & Conditions', path: '/policies/terms' },
-              { text: 'Shipping Policy', path: '/policies/shipping' },
-              { text: 'Cancellation & Refund', path: '/policies/cancellation-refund' },
+              { text: 'Privacy Policy', path: '/privacy' },
+              { text: 'Terms & Conditions', path: '/terms' },
+              { text: 'Shipping Policy', path: '/shipping' },
+              { text: 'Cancellation & Refund', path: '/cancellation-refund' },
             ].map((item, index) => (
               <Link
                 key={index}
