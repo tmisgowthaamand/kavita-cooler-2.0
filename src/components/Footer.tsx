@@ -50,9 +50,18 @@ const Footer = () => {
           {/* Brand / About */}
           <motion.div variants={item} className="space-y-4">
             <h3 className="font-jakarta text-xl font-bold">Kavita Cooler</h3>
-            <p className="text-[#9CA3AF] text-sm">
+            <p className="text-[#9CA3AF] text-sm mb-3">
               Authorized Dealer & Service Partner for Leading Appliance Brands.
             </p>
+            <div className="flex items-start space-x-3 text-[#9CA3AF] text-sm mb-3">
+              <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-[#FF7A00]" />
+              <address className="not-italic">
+                No:505/B23, Asirvatham Nagar,<br />
+                MS Road, Vetturnimadam,<br />
+                Nagercoil, Kanniyakumari,<br />
+                Tamil Nadu - 629001
+              </address>
+            </div>
             <div className="flex space-x-4 pt-2">
               {[
                 { icon: Facebook, label: 'Facebook' },

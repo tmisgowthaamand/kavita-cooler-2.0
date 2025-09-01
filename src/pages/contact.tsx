@@ -217,14 +217,14 @@ const ContactPage = () => {
               <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
               <p className="text-gray-600 mb-4">Our service center location</p>
               <a 
-                href="https://www.google.com/maps/search/?api=1&query=Kavita+Cooler+Andheri+East" 
+                href="https://www.google.com/maps/place/Asirvatham+Nagar,+Vetturnimadam,+Nagercoil,+Tamil+Nadu+629001" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-primary font-medium inline-flex items-center"
               >
                 Get Directions <ArrowRight className="ml-2 h-4 w-4" />
               </a>
-              <p className="text-sm text-gray-500 mt-2">123 Appliance Street, Andheri East, Mumbai - 400069</p>
+              <p className="text-sm text-gray-500 mt-2">No:505/B23, Asirvatham Nagar,<br />MS Road, Vetturnimadam<br />Nagercoil, Kanniyakumari<br />Tamil Nadu - 629001</p>
             </motion.div>
           </motion.div>
         </div>
@@ -524,7 +524,7 @@ const ContactPage = () => {
             viewport={{ once: true }}
             variants={container}
           >
-            {brands.map((brand, index) => (
+            {brands.map((brand) => (
               <motion.div 
                 key={brand.name}
                 className="bg-white p-6 rounded-xl flex items-center justify-center h-32 hover:shadow-md transition-all duration-300"
