@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams, Link } from 'react-router-dom';
-import { X, ChevronDown, ChevronUp, SlidersHorizontal, Star } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { X, ChevronDown, ChevronUp, SlidersHorizontal, Star, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -33,7 +33,7 @@ export default function ShopPage() {
   const [searchQuery, setSearchQuery] = useState('');
   
   const { state, dispatch } = useProducts();
-  const { filteredProducts, isLoading } = state;
+  const { filteredProducts } = state;
   
   // Initialize filters from URL params
   useEffect(() => {
@@ -341,7 +341,7 @@ export default function ShopPage() {
           <section aria-labelledby="products-heading" className="pb-24 pt-6">
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
               {/* Desktop filters */}
-              <form className="hidden lg:block">
+              <div className="hidden lg:block">
                 <div className="space-y-6 border-b border-gray-200 pb-6">
                   <form onSubmit={handleSearch} className="relative">
                     <Input
@@ -352,10 +352,7 @@ export default function ShopPage() {
                       className="w-full rounded-md"
                     />
                     <Button type="submit" variant="ghost" size="icon" className="absolute right-0 top-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-gray-400">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                      </svg>
+                      <Search className="h-5 w-5 text-gray-400" />
                     </Button>
                   </form>
                 </div>
@@ -426,7 +423,7 @@ export default function ShopPage() {
                     </Button>
                   )}
                 </div>
-              </form>
+              </div>
 
               {/* Product grid */}
               <div className="lg:col-span-3">

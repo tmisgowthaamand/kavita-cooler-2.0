@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { Product, ProductFilters, ProductSortOption } from '../types';
+import { Product, ProductFilters } from '../types';
 import productsData from '../data/products';
 
 type ProductsState = {
@@ -49,7 +49,19 @@ const productsReducer = (state: ProductsState, action: ProductsAction): Products
     
     case 'APPLY_FILTERS': {
       let filtered = [...state.products];
-      const { categories, brands, priceRange, ratings, inStock } = state.filters;
+      const { categories, brands, priceRange, ratings, inStock, search } = state.filters;
+
+      // Apply search filter
+      if (search && search.trim()) {
+        const searchTerm = search.toLowerCase().trim();
+        filtered = filtered.filter(product => 
+          product.title.toLowerCase().includes(searchTerm) ||
+          product.brand.toLowerCase().includes(searchTerm) ||
+          product.category.toLowerCase().includes(searchTerm) ||
+          product.description?.toLowerCase().includes(searchTerm) ||
+          product.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+        );
+      }
 
       if (categories?.length) {
         filtered = filtered.filter(product => categories.includes(product.category));

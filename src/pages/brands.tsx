@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "../components/ui/button";
 import { Link } from 'react-router-dom';
@@ -8,37 +8,37 @@ const brands = [
   {
     id: 1,
     name: 'Godrej',
-    logo: 'https://images.unsplash.com/photo-1612815159858-d6a4c23acb35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80',
+    logo: '/godrej logo.jpg',
     description: 'Innovative and reliable home appliances for modern Indian households.'
   },
   {
     id: 2,
     name: 'Voltas',
-    logo: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    logo: '/voltas logo.jpg',
     description: 'Trusted cooling solutions for every Indian home.'
   },
   {
     id: 3,
     name: 'Blue Star',
-    logo: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    logo: '/blue star logo.jpg',
     description: 'Premium air conditioning and refrigeration solutions.'
   },
   {
     id: 4,
     name: 'Panasonic',
-    logo: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    logo: '/panasonic logo.jpg',
     description: 'Japanese technology for superior home appliances.'
   },
   {
     id: 5,
     name: 'Samsung',
-    logo: 'https://images.unsplash.com/photo-1610945415295-d9bbf067eaf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80',
+    logo: '/samsung logo.jpg',
     description: 'Cutting-edge electronics and home appliances.'
   },
   {
     id: 6,
     name: 'LG',
-    logo: 'https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1135&q=80',
+    logo: '/lg logo.jpg',
     description: 'Life\'s good with LG\'s innovative home solutions.'
   }
 ];
@@ -117,7 +117,7 @@ const BrandsPage = () => {
                         Shop {brand.name}
                       </Button>
                     </Link>
-                    <Link to="/book-service" className="block w-full">
+                    <Link to={`/service?brand=${encodeURIComponent(brand.name)}`} className="block w-full">
                       <Button variant="outline" className="w-full border-[#004AAD] text-[#004AAD] hover:bg-[#004AAD]/10">
                         Book Service
                       </Button>
@@ -264,7 +264,7 @@ const BrandsPage = () => {
                   Shop Now
                 </Button>
               </Link>
-              <Link to="/book-service">
+              <Link to="/service">
                 <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-medium">
                   Book a Service
                 </Button>

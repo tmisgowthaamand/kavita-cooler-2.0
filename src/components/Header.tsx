@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Search, Menu, Phone, MapPin, Clock, Home } from 'lucide-react';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Search, Menu, Phone, MapPin, Clock, Home, ArrowLeft } from 'lucide-react';
 import { CartDropdown } from '@/features/cart/components/CartDropdown';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,17 +9,19 @@ import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const navItems = [
     { href: '/', label: 'Home', icon: Home },
     { href: '/shop', label: 'Shop' },
-    { href: '/services', label: 'Services' },
+    { href: '/service', label: 'Service' },
     { href: '/brands', label: 'Brands' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
   
-  const { pathname } = useLocation();
+  const showBackButton = pathname !== '/';
 
   return (
     <>
@@ -48,18 +50,30 @@ const Header = () => {
         <div className="container-main">
           <div className="flex items-center justify-between h-16 md:h-20">
             
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <img 
-                src="/logo.png" 
-                alt="Kavita Cooler Logo" 
-                className="h-12 w-auto object-contain"
-              />
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-secondary">Kavita Cooler</h1>
-                <p className="text-xs text-muted-foreground">Authorized Dealers & Service</p>
-              </div>
-            </Link>
+            {/* Back Button & Logo */}
+            <div className="flex items-center gap-3">
+              {showBackButton && (
+                <Button 
+                  variant="ghost" 
+                  size="icon"
+                  onClick={() => navigate(-1)}
+                  className="text-secondary hover:text-primary"
+                >
+                  <ArrowLeft className="h-5 w-5" />
+                </Button>
+              )}
+              <Link to="/" className="flex items-center gap-3">
+                <img 
+                  src="/logo.png" 
+                  alt="Kavita Cooler Logo" 
+                  className="h-12 w-auto object-contain"
+                />
+                <div className="hidden sm:block">
+                  <h1 className="text-xl font-bold text-secondary">Kavita Cooler</h1>
+                  <p className="text-xs text-muted-foreground">Authorized Dealers & Service</p>
+                </div>
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
@@ -88,16 +102,30 @@ const Header = () => {
               {/* Search */}
               <div className="hidden md:flex items-center gap-2">
                 {isSearchOpen ? (
-                  <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(!isSearchOpen)}>
-                      <Search className="h-5 w-5" />
-                    </Button>
-                    <CartDropdown />
-                    <span className="hidden md:inline-block">
-                      <Button asChild>
-                        <Link to="/contact">Book Service</Link>
+                  <div className="flex items-center gap-2">
+                    <div className="relative">
+                      <Input
+                        type="text"
+                        placeholder="Search products..."
+                        className="w-64 pr-10"
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            const searchTerm = (e.target as HTMLInputElement).value;
+                            if (searchTerm.trim()) {
+                              window.location.href = `/shop?q=${encodeURIComponent(searchTerm)}`;
+                            }
+                          }
+                        }}
+                      />
+                      <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        className="absolute right-0 top-0 h-full"
+                        onClick={() => setIsSearchOpen(false)}
+                      >
+                        <Search className="h-4 w-4" />
                       </Button>
-                    </span>
+                    </div>
                   </div>
                 ) : (
                   <Button 
@@ -115,6 +143,13 @@ const Header = () => {
                 <CartDropdown />
               </div>
 
+              {/* Book Service Button */}
+              <div className="hidden lg:block">
+                <Button asChild>
+                  <Link to="/service">Book Service</Link>
+                </Button>
+              </div>
+
               {/* Mobile menu */}
               <Sheet>
                 <SheetTrigger asChild>
@@ -127,8 +162,27 @@ const Header = () => {
                     
                     {/* Mobile Search */}
                     <div className="flex items-center gap-2">
-                      <Input placeholder="Search appliances..." />
-                      <Button size="icon">
+                      <Input 
+                        placeholder="Search products..." 
+                        onKeyDown={(e) => {
+                          if (e.key === 'Enter') {
+                            const searchTerm = (e.target as HTMLInputElement).value;
+                            if (searchTerm.trim()) {
+                              window.location.href = `/shop?q=${encodeURIComponent(searchTerm)}`;
+                            }
+                          }
+                        }}
+                      />
+                      <Button 
+                        size="icon"
+                        onClick={(e) => {
+                          const input = e.currentTarget.parentElement?.querySelector('input');
+                          const searchTerm = input?.value;
+                          if (searchTerm?.trim()) {
+                            window.location.href = `/shop?q=${encodeURIComponent(searchTerm)}`;
+                          }
+                        }}
+                      >
                         <Search className="h-4 w-4" />
                       </Button>
                     </div>

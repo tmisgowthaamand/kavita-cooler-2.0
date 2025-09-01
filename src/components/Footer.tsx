@@ -26,15 +26,6 @@ const Footer = () => {
     },
   };
 
-  // Brand partners data
-  const partners = [
-    { name: 'Godrej', logo: '/images/partners/godrej-logo.png' },
-    { name: 'Panasonic', logo: '/images/partners/panasonic-logo.png' },
-    { name: 'Bosch', logo: '/images/partners/bosch-logo.png' },
-    { name: 'Siemens', logo: '/images/partners/siemens-logo.png' },
-    { name: 'Liebherr', logo: '/images/partners/liebherr-logo.png' },
-    { name: 'V Guard', logo: '/images/partners/vguard-logo.png' },
-  ];
 
   return (
     <footer className="bg-[#0F172A] text-[#F9FAFB] overflow-hidden">
@@ -185,23 +176,37 @@ const Footer = () => {
           <p className="text-center text-[#9CA3AF] text-sm mb-6">
             Authorized Service Partner for Trusted Global Brands.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {partners.map((partner, index) => (
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            {[
+              { name: 'Godrej', logo: '/godrej logo.jpg' },
+              { name: 'Panasonic', logo: '/panasonic logo.jpg' },
+              { name: 'Bosch', logo: '/bosch logo.jpg' },
+              { name: 'Siemens', logo: '/siemens logo.jpg' },
+              { name: 'Liebherr', logo: '/liebherr logo.jpg' },
+              { name: 'V-Guard', logo: '/v guard logo.jpg' },
+            ].map((brand, index) => (
               <motion.div
                 key={index}
-                className="grayscale hover:grayscale-0 transition-all duration-300"
+                className="flex items-center gap-3 group"
                 whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
               >
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name} 
-                  className="h-8 md:h-10 w-auto object-contain opacity-80 hover:opacity-100"
-                  loading="lazy"
-                />
+                <div className="w-8 h-8 bg-white rounded p-1">
+                  <img 
+                    src={brand.logo} 
+                    alt={`${brand.name} logo`}
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-[#9CA3AF] text-sm font-medium group-hover:text-white transition-colors duration-200">
+                  {brand.name}
+                </span>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
 
         {/* Bottom Section: Legal + Copyright */}
         <motion.div 

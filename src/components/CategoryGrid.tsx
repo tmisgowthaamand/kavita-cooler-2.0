@@ -5,7 +5,6 @@ import { ArrowRight } from 'lucide-react';
 
 // Import category images
 import refrigeratorImage from '@/assets/refrigerator-category.jpg';
-import acImage from '@/assets/ac-category.jpg';
 import tvImage from '@/assets/tv-category.jpg';
 import washingMachineImage from '@/assets/washing-machine-category.jpg';
 import fanImage from '@/assets/fan-category.jpg';
@@ -24,7 +23,7 @@ const CategoryGrid = () => {
       id: 'ac',
       name: 'Air Conditioner',
       description: 'Smart cooling for every room',
-      image: acImage,
+      image: '/lg.jpg',
       itemCount: '120+ Models',
       href: '/shop/ac',
     },
@@ -56,7 +55,7 @@ const CategoryGrid = () => {
       id: 'water-heater',
       name: 'Water Heater',
       description: 'Instant and storage heaters',
-      image: acImage, // Using AC image as placeholder
+      image: '/crompton wh.jpg',
       itemCount: '60+ Models',
       href: '/shop/water-heater',
     },
@@ -64,7 +63,7 @@ const CategoryGrid = () => {
       id: 'air-cooler',
       name: 'Air Cooler',
       description: 'Eco-friendly cooling solutions',
-      image: fanImage, // Using fan image as placeholder
+      image: '/voltas air.jpg',
       itemCount: '40+ Models',
       href: '/shop/air-cooler',
     },

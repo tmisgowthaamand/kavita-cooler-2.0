@@ -45,29 +45,31 @@ export const products: Product[] = [
     discountPct: 15,
     rating: 4.3,
     reviewsCount: 987,
-    image: "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4c?q=80&w=1000",
+    image: "/lg.jpg",
     inStock: true,
     capacity: "1.5 Ton",
     energyRating: "5 Star",
-    description: "Experience powerful cooling with energy efficiency. LG's 5-star rated inverter split AC provides rapid cooling while consuming less power.",
+    description: "Experience energy-efficient cooling with LG's 5 Star Inverter Split AC. Features 4-in-1 convertible cooling, HD filter with anti-virus protection, and ultra-low noise operation.",
     images: [
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4c?q=80&w=1000",
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4d?q=80&w=1000"
+      "/lg.jpg",
+      "/lg.jpg"
     ],
     features: [
-      "5 Star Energy Rating",
-      "4-in-1 Convertible Cooling",
+      "5 Star Energy Rating for energy savings",
+      "4-in-1 Convertible Cooling Mode",
       "HD Filter with Anti-Virus Protection",
-      "4-Way Swing",
-      "Low Noise Operation"
+      "4-Way Swing for uniform cooling",
+      "Low Noise Operation (as low as 22 dB)",
+      "Copper Condenser for better cooling"
     ],
-    tags: ["AC", "Inverter", "5 Star", "Split AC"],
+    tags: ["AC", "Inverter", "5 Star", "Split AC", "LG"],
     specs: {
-      "Cooling Capacity": "1.5 Ton",
+      "Capacity": "1.5 Ton",
       "Energy Rating": "5 Star",
-      "Special Features": "4-in-1 Convertible, HD Filter, 4 Way Swing",
-      "Refrigerant": "R32",
-      "Noise Level": "19 dB (Lowest)"
+      "Cooling Power": "5100 W",
+      "Noise Level": "22 dB (Lowest)",
+      "Special Features": "4-in-1 Convertible, HD Filter, 4-Way Swing",
+      "Warranty": "1 Year on Product, 10 Years on Compressor"
     }
   },
   {
@@ -114,13 +116,13 @@ export const products: Product[] = [
     discountPct: 12,
     rating: 4.4,
     reviewsCount: 765,
-    image: "https://images.unsplash.com/photo-1571175443880-49e1d9338cda?q=80&w=1000",
+    image: "/samsung refrig.jpg",
     inStock: true,
     capacity: "253 L",
     description: "Samsung's 3-star double door refrigerator with digital inverter technology ensures optimal cooling while being energy efficient. Features include twin cooling plus and stabilizer-free operation.",
     images: [
-      "https://images.unsplash.com/photo-1571175443880-49e1d9338cda?q=80&w=1000",
-      "https://images.unsplash.com/photo-1571175443880-49e1d9338cdb?q=80&w=1000"
+      "/samsung refrig.jpg",
+      "/samsung refrig.jpg"
     ],
     features: [
       "253L Capacity",
@@ -148,12 +150,13 @@ export const products: Product[] = [
     discountPct: 17,
     rating: 4.1,
     reviewsCount: 543,
-    image: "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4e?q=80&w=1000",
+    image: "/havells fan.jpg",
     inStock: true,
     capacity: "48-inch",
     description: "Havells 48-inch premium ceiling fan with remote control for convenient operation. Features high speed air delivery and energy efficient motor.",
     images: [
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4e?q=80&w=1000"
+      "/havells fan.jpg",
+      "/havells fan.jpg"
     ],
     features: [
       "48-inch Sweep",
@@ -181,13 +184,13 @@ export const products: Product[] = [
     discountPct: 10,
     rating: 4.6,
     reviewsCount: 1123,
-    image: "https://images.unsplash.com/photo-1626806780665-4e0fcaa6f9d6?q=80&w=1000",
+    image: "/lg washing.jpg",
     inStock: true,
     capacity: "8.0 kg",
     description: "LG's 5-star rated front load washing machine with AI DD™ and 6 Motion Direct Drive technology for perfect wash care. Steam for hygiene and allergy care.",
     images: [
-      "https://images.unsplash.com/photo-1626806780665-4e0fcaa6f9d6?q=80&w=1000",
-      "https://images.unsplash.com/photo-1626806780665-4e0fcaa6f9d7?q=80&w=1000"
+      "/lg washing.jpg",
+      "/lg washing.jpg"
     ],
     features: [
       "8.0 kg Capacity",
@@ -215,15 +218,16 @@ export const products: Product[] = [
     discountPct: 18,
     rating: 4.7,
     reviewsCount: 1345,
-    image: "https://images.unsplash.com/photo-1593305848501-9c8c8b0b3f3f?q=80&w=1000",
+    image: "/sony tv.jpg",
     inStock: true,
     description: "Experience breathtaking 4K HDR picture quality with Sony's X1 4K HDR Processor. Smart TV with Android TV, Google Assistant built-in, and Chromecast built-in.",
     images: [
-      "https://images.unsplash.com/photo-1593305848501-9c8c8b0b3f3f?q=80&w=1000",
-      "https://images.unsplash.com/photo-1593305848501-9c8c8b0b3f40?q=80&w=1000"
+      "/sony tv.jpg",
+      "/sony tv.jpg"
     ],
     features: [
-      "65\" 4K HDR Processor X1",
+      "65\" 4K HDR",
+      "Processor X1",
       "TRILUMINOS Display",
       "Android TV with Google Assistant",
       "Dolby Vision & Atmos",
@@ -246,14 +250,16 @@ export const products: Product[] = [
     price: 38990,
     mrp: 43990,
     discountPct: 11,
-    rating: 4.3,
+    rating: 4.0,
     reviewsCount: 923,
-    image: "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4f?q=80&w=1000",
+    image: "/voltas ac.jpg",
     inStock: true,
     capacity: "1.5 Ton",
+    energyRating: "3 Star",
     description: "Voltas 3-star split inverter AC with superior cooling and energy efficiency. Features include 4-way swing, anti-dust filter, and stabilizer-free operation.",
     images: [
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4f?q=80&w=1000"
+      "/voltas ac.jpg",
+      "/voltas ac.jpg"
     ],
     features: [
       "1.5 Ton Capacity",
@@ -279,14 +285,15 @@ export const products: Product[] = [
     price: 15990,
     mrp: 17990,
     discountPct: 11,
-    rating: 4.0,
+    rating: 4.1,
     reviewsCount: 654,
-    image: "https://images.unsplash.com/photo-1571175443880-49e1d9338cdc?q=80&w=1000",
+    image: "/godrej refrig.jpg",
     inStock: true,
     capacity: "190 L",
     description: "Godrej 190L direct cool single door refrigerator with smart connect technology. Features include toughened glass shelves and fruit & vegetable box with humidity control.",
     images: [
-      "https://images.unsplash.com/photo-1571175443880-49e1d9338cdc?q=80&w=1000"
+      "/godrej refrig.jpg",
+      "/godrej refrig.jpg"
     ],
     features: [
       "190L Capacity",
@@ -312,14 +319,15 @@ export const products: Product[] = [
     price: 2299,
     mrp: 2899,
     discountPct: 21,
-    rating: 4.2,
+    rating: 4.0,
     reviewsCount: 876,
-    image: "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4g?q=80&w=1000",
+    image: "/bajaj fan.jpg",
     inStock: true,
-    capacity: "48-inch",
+    capacity: "1200mm",
     description: "Bajaj 1200mm premium ceiling fan with high speed motor and superior air delivery. Features include rust-proof blades and 2-year warranty.",
     images: [
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4g?q=80&w=1000"
+      "/bajaj fan.jpg",
+      "/bajaj fan.jpg"
     ],
     features: [
       "1200mm Sweep",
@@ -345,14 +353,15 @@ export const products: Product[] = [
     price: 24990,
     mrp: 28990,
     discountPct: 14,
-    rating: 4.5,
+    rating: 4.4,
     reviewsCount: 1023,
-    image: "https://images.unsplash.com/photo-1626806780665-4e0fcaa6f9d8?q=80&w=1000",
+    image: "/ifb washing.jpg",
     inStock: true,
     capacity: "6.5 kg",
     description: "IFB 6.5 kg fully automatic front load washing machine with Aqua Energie technology for hygiene washing. Features include steam wash and 9 wash programs.",
     images: [
-      "https://images.unsplash.com/photo-1626806780665-4e0fcaa6f9d8?q=80&w=1000"
+      "/ifb washing.jpg",
+      "/ifb washing.jpg"
     ],
     features: [
       "6.5 kg Capacity",
@@ -378,14 +387,16 @@ export const products: Product[] = [
     price: 52990,
     mrp: 58990,
     discountPct: 10,
-    rating: 4.6,
+    rating: 4.3,
     reviewsCount: 876,
-    image: "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4h?q=80&w=1000",
+    image: "/hitachi ac.jpg",
     inStock: true,
     capacity: "2.0 Ton",
+    energyRating: "5 Star",
     description: "Hitachi 2.0 ton 5-star inverter split AC with PM 2.5 filter and eco mode. Features include 100% copper condenser and stabilizer free operation.",
     images: [
-      "https://images.unsplash.com/photo-1585730064541-4b1fdd5d3d4h?q=80&w=1000"
+      "/hitachi ac.jpg",
+      "/hitachi ac.jpg"
     ],
     features: [
       "2.0 Ton Capacity",
@@ -407,26 +418,31 @@ export const products: Product[] = [
 
 export const categories = [
   { id: 'all', name: 'All Categories' },
-  { id: 'tv', name: 'TVs' },
-  { id: 'ac', name: 'Air Conditioners' },
-  { id: 'washing-machine', name: 'Washing Machines' },
-  { id: 'refrigerator', name: 'Refrigerators' },
-  { id: 'fan', name: 'Fans' }
+  { id: 'TV', name: 'TVs' },
+  { id: 'AC', name: 'Air Conditioners' },
+  { id: 'Washing Machine', name: 'Washing Machines' },
+  { id: 'Refrigerator', name: 'Refrigerators' },
+  { id: 'Fan', name: 'Fans' }
 ];
 
 export const brands = [
-  { id: 'samsung', name: 'Samsung' },
-  { id: 'lg', name: 'LG' },
-  { id: 'whirlpool', name: 'Whirlpool' },
-  { id: 'godrej', name: 'Godrej' },
-  { id: 'haier', name: 'Haier' },
-  { id: 'hitachi', name: 'Hitachi' },
-  { id: 'voltas', name: 'Voltas' },
-  { id: 'daikin', name: 'Daikin' },
-  { id: 'blue-star', name: 'Blue Star' },
-  { id: 'crompton', name: 'Crompton' },
-  { id: 'havells', name: 'Havells' },
-  { id: 'bajaj', name: 'Bajaj' }
+  { id: 'samsung', name: 'Samsung', logo: '/samsung logo.png', description: 'Cutting-edge electronics and home appliances.' },
+  { id: 'lg', name: 'LG', logo: '/lg logo.jpg', description: "Life's good with LG's innovative home solutions." },
+  { id: 'whirlpool', name: 'Whirlpool', logo: '/logo.png' },
+  { id: 'godrej', name: 'Godrej', logo: '/godrej logo.jpg', description: 'Innovative and reliable home appliances for modern Indian households.' },
+  { id: 'haier', name: 'Haier', logo: '/logo.png' },
+  { id: 'hitachi', name: 'Hitachi', logo: '/logo.png' },
+  { id: 'voltas', name: 'Voltas', logo: '/voltas logo.png', description: 'Trusted cooling solutions for every Indian home.' },
+  { id: 'daikin', name: 'Daikin', logo: '/logo.png' },
+  { id: 'blue-star', name: 'Blue Star', logo: '/blue star logo.png', description: 'Premium air conditioning and refrigeration solutions.' },
+  { id: 'crompton', name: 'Crompton', logo: '/logo.png' },
+  { id: 'havells', name: 'Havells', logo: '/harvells logo.png' },
+  { id: 'bajaj', name: 'Bajaj', logo: '/logo.png' },
+  { id: 'panasonic', name: 'Panasonic', logo: '/panasonic logo.jpg', description: 'Japanese technology for superior home appliances.' },
+  { id: 'bosch', name: 'Bosch', logo: '/bosch logo.jpg', description: 'German engineering excellence in home appliances.' },
+  { id: 'siemens', name: 'Siemens', logo: '/siemens logo.jpg', description: 'Premium German technology for modern homes.' },
+  { id: 'liebherr', name: 'Liebherr', logo: '/liebherr logo.jpg', description: 'Swiss precision in refrigeration technology.' },
+  { id: 'v-guard', name: 'V-Guard', logo: '/v guard logo.jpg', description: 'Trusted Indian brand for electrical appliances and stabilizers.' }
 ];
 
 export const sortOptions = [

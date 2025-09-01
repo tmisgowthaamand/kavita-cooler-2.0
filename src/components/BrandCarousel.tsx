@@ -1,13 +1,16 @@
 import { Card } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const BrandCarousel = () => {
+  const navigate = useNavigate();
+  
   const brands = [
-    { name: 'Godrej', logo: 'G', color: 'bg-blue-600' },
-    { name: 'Panasonic', logo: 'P', color: 'bg-blue-700' },
-    { name: 'Bosch', logo: 'B', color: 'bg-red-600' },
-    { name: 'Siemens', logo: 'S', color: 'bg-cyan-600' },
-    { name: 'Liebherr', logo: 'L', color: 'bg-blue-800' },
-    { name: 'V Guard', logo: 'V', color: 'bg-orange-600' },
+    { name: 'Godrej', logo: '/godrej logo.jpg', description: 'Innovative and reliable home appliances for modern Indian households.' },
+    { name: 'Voltas', logo: '/voltas logo.jpg', description: 'Trusted cooling solutions for every Indian home.' },
+    { name: 'Blue Star', logo: '/blue star logo.jpg', description: 'Premium air conditioning and refrigeration solutions.' },
+    { name: 'Panasonic', logo: '/panasonic logo.jpg', description: 'Japanese technology for superior home appliances.' },
+    { name: 'Samsung', logo: '/samsung logo.jpg', description: 'Cutting-edge electronics and home appliances.' },
+    { name: 'LG', logo: '/lg logo.jpg', description: "Life's good with LG's innovative home solutions." },
   ];
 
   return (
@@ -24,18 +27,39 @@ const BrandCarousel = () => {
         </div>
 
         {/* Brand Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {brands.map((brand) => (
             <Card 
               key={brand.name} 
-              className="p-6 text-center hover:shadow-lg transition-all duration-300 group cursor-pointer"
+              className="p-6 text-center hover:shadow-lg transition-all duration-300 group"
             >
-              <div className={`w-16 h-16 ${brand.color} rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                <span className="text-white font-bold text-xl">{brand.logo}</span>
+              <div className="w-20 h-20 bg-white border border-gray-200 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300 overflow-hidden p-3">
+                <img 
+                  src={brand.logo} 
+                  alt={`${brand.name} logo`}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
-              <h3 className="font-semibold text-secondary group-hover:text-primary transition-colors">
+              <h3 className="font-semibold text-secondary text-xl mb-2">
                 {brand.name}
               </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                {brand.description}
+              </p>
+              <div className="flex gap-2 justify-center">
+                <button 
+                  onClick={() => navigate(`/products?brand=${brand.name.toLowerCase().replace(' ', '-')}`)}
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm"
+                >
+                  Shop {brand.name}
+                </button>
+                <button 
+                  onClick={() => navigate(`/service?brand=${brand.name.toLowerCase().replace(' ', '-')}`)}
+                  className="px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors text-sm"
+                >
+                  Book Service
+                </button>
+              </div>
             </Card>
           ))}
         </div>

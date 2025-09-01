@@ -39,6 +39,7 @@ export interface ProductFilters {
   priceRange?: [number, number];
   ratings?: number[];
   inStock?: boolean;
+  search?: string;
 }
 
 export interface ProductSortOption {

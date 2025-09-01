@@ -10,6 +10,7 @@ import Index from "./pages/index";
 import Shop from "./pages/shop";
 import ProductDetails from "./pages/products/[id]";
 import Services from "./pages/services";
+import ServicePage from "./pages/ServicePage";
 import Brands from "./pages/brands";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -55,6 +56,7 @@ const AppRoutes = () => (
     <Route path="/shop" element={<Shop />} />
     <Route path="/products/:id" element={<ProductDetails />} />
     <Route path="/services" element={<Services />} />
+    <Route path="/service" element={<ServicePage />} />
     <Route path="/brands" element={<Brands />} />
     <Route path="/about" element={<About />} />
     <Route path="/contact" element={<Contact />} />
