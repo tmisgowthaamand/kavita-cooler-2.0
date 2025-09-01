@@ -23,6 +23,12 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Shipping from "./pages/shipping";
 import CancellationRefund from "./pages/cancellation-refund";
+import BookService from "./pages/services/book.tsx";
+import TrackService from "./pages/track-service.tsx";
+import WarrantyPolicy from "./pages/policies/warranty.tsx";
+import ReturnsRepairs from "./pages/services/repairs.tsx";
+import FAQ from "./pages/faq.tsx";
+import StoreLocator from "./pages/store-locator.tsx";
 
 // Configure query client with proper defaults
 const queryClient = new QueryClient({
@@ -74,6 +80,12 @@ const AppRoutes = () => (
     <Route path="/terms" element={<Terms />} />
     <Route path="/shipping" element={<Shipping />} />
     <Route path="/cancellation-refund" element={<CancellationRefund />} />
+    <Route path="/services/book" element={<BookService />} />
+    <Route path="/track-service" element={<TrackService />} />
+    <Route path="/policies/warranty" element={<WarrantyPolicy />} />
+    <Route path="/services/repairs" element={<ReturnsRepairs />} />
+    <Route path="/faq" element={<FAQ />} />
+    <Route path="/store-locator" element={<StoreLocator />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
